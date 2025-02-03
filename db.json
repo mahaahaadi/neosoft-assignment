@@ -1,0 +1,492 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Dr. John Doe",
+      "username": "john_doe",
+      "password": "password123",
+      "email": "john.doe@example.com",
+      "contactNumber": "1234567890",
+      "role": "HOD",
+      "department": "Mathematics"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "username": "jane_smith",
+      "password": "password456",
+      "email": "jane.smith@example.com",
+      "contactNumber": "0987654321",
+      "role": "staff",
+      "department": "History"
+    },
+    {
+      "id": "4",
+      "name": "Hadimani Mahantesh",
+      "username": "hod",
+      "password": "1234567890",
+      "email": "haadi@mahaa.com",
+      "contactNumber": "0987654321",
+      "role": "HOD",
+      "department": "Computer Science"
+    },
+    {
+      "id": "4",
+      "name": "Mounesh Hadimani",
+      "username": "staff",
+      "password": "1234567890",
+      "email": "mounahaadi@gmail.com",
+      "contactNumber": "0987654321",
+      "role": "staff",
+      "department": "Computer Science"
+    },
+    {
+      "id": "5",
+      "name": "Mahantesh Hadimani",
+      "username": "mahaahaadi",
+      "password": "1234567890",
+      "email": "jane.smith@example.com",
+      "contactNumber": "0987654321",
+      "role": "staff",
+      "department": "Computer Science"
+    },
+    {
+      "id": "6",
+      "name": "Dr. John Doe",
+      "username": "john_doe",
+      "password": "password123",
+      "email": "john.doe@example.com",
+      "contactNumber": "1234567890",
+      "role": "staff",
+      "department": "Mathematics"
+    },
+    {
+      "id": "46yui",
+      "name": "Mahantesfdh Hadimani",
+      "username": "staff",
+      "password": "123456fd7890",
+      "email": "jane.smith@dfexample.com",
+      "contactNumber": "0987054321",
+      "role": "staff",
+      "department": "Biology"
+    },
+    {
+      "id": "46yudi",
+      "name": "Mahantesh",
+      "username": "Mahantesh Hadimani",
+      "password": "1234567890",
+      "email": "jane.ssmith@dfexample.com",
+      "contactNumber": "7054321999",
+      "role": "HOD",
+      "department": "Biology"
+    },
+    {
+      "id": "a164",
+      "name": "asdf",
+      "username": "asdf",
+      "password": "asdfasdf",
+      "email": "asdf@af.com",
+      "contactNumber": "45t44323re",
+      "role": "staff",
+      "department": "Biology"
+    },
+    {
+      "id": "a41b",
+      "name": "Mahantesh",
+      "username": "mahaahaadi",
+      "password": "mahaahaadi@1234",
+      "email": "mahaahaadi@gmail.com",
+      "contactNumber": "8660720750",
+      "role": "staff",
+      "department": "Biology"
+    },
+    {
+      "id": "e68e",
+      "name": "akshadeep",
+      "username": "ashade",
+      "password": "1234567890",
+      "email": "aksha@gmail.com",
+      "contactNumber": "1234567890",
+      "role": "staff",
+      "department": "Computer Science"
+    },
+    {
+      "id": "670c",
+      "name": "asd",
+      "username": "ddgfdgt",
+      "password": "1234567890",
+      "email": "dvsfsx@dff.vmn",
+      "contactNumber": "1234567890",
+      "role": "staff",
+      "department": "Computer Science"
+    },
+    {
+      "id": "3d48",
+      "name": "ddd",
+      "username": "dffdfd",
+      "password": "iu76yuhf",
+      "email": "df@mail.com",
+      "contactNumber": "1234567894",
+      "department": "Computer Science",
+      "role": "staff"
+    },
+    {
+      "id": "2820",
+      "name": "Tony Stark",
+      "username": "tony_stark",
+      "password": "1234567890",
+      "email": "tony@gmail.com",
+      "contactNumber": "1234567890",
+      "role": "staff",
+      "department": "Computer Science"
+    },
+    {
+      "id": "282iu",
+      "name": "Andrews Stark",
+      "username": "tony_stark",
+      "password": "1234567890",
+      "email": "tony@gmail.com",
+      "contactNumber": "1234567890",
+      "role": "staff",
+      "department": "Computer Science"
+    },
+    {
+      "id": "282iu",
+      "name": "Andrews Stark",
+      "username": "tony_stark",
+      "password": "1234567890",
+      "email": "tony@gmail.com",
+      "contactNumber": "1234567890",
+      "role": "staff",
+      "department": "Computer Science"
+    },
+    {
+      "id": "282iu",
+      "name": "Andrews Stark",
+      "username": "tony_stark",
+      "password": "1234567890",
+      "email": "tony@gmail.com",
+      "contactNumber": "1234567890",
+      "role": "staff",
+      "department": "Computer Science"
+    },
+    {
+      "id": "282iu",
+      "name": "Andrews Ijkd",
+      "username": "tony_stark",
+      "password": "1234567890",
+      "email": "tony@gmail.com",
+      "contactNumber": "1234567890",
+      "role": "staff",
+      "department": "Computer Science"
+    }
+  ],
+  "leaves": [
+    {
+      "id": "1",
+      "userId": "4",
+      "fromDate": "2024-01-01",
+      "toDate": "2024-01-05",
+      "reason": "Medical",
+      "status": "Approved",
+      "department": "Computer Science"
+    },
+    {
+      "id": "2",
+      "userId": "5",
+      "fromDate": "2024-02-02",
+      "toDate": "2024-03-05",
+      "reason": "Personal",
+      "status": "Rejected",
+      "department": "Computer Science"
+    },
+    {
+      "id": "4",
+      "userId": "46yui",
+      "fromDate": "2024-02-02",
+      "toDate": "2024-03-05",
+      "reason": "Family Issue",
+      "status": "Approved",
+      "department": "Biology"
+    },
+    {
+      "id": "48iukj",
+      "userId": "46yui",
+      "fromDate": "2024-02-02",
+      "toDate": "2024-03-05",
+      "reason": "Others",
+      "status": "Rejected",
+      "department": "Biology"
+    },
+    {
+      "id": "56",
+      "userId": "46yui",
+      "fromDate": "2024-02-02",
+      "toDate": "2024-03-05",
+      "reason": "Health checkup",
+      "status": "Approved",
+      "department": "Biology"
+    },
+    {
+      "id": "487uy",
+      "userId": "46yui",
+      "fromDate": "2024-02-02",
+      "toDate": "2024-03-05",
+      "reason": "Family Trip",
+      "status": "Rejected",
+      "department": "Biology"
+    },
+    {
+      "id": "4",
+      "userId": "46yui",
+      "fromDate": "2024-02-02",
+      "toDate": "2024-03-05",
+      "reason": "Medical",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "6",
+      "userId": "a164",
+      "fromDate": "2024-02-02",
+      "toDate": "2024-03-05",
+      "reason": "Sick",
+      "status": "Rejected",
+      "department": "Biology"
+    },
+    {
+      "id": "6798",
+      "userId": "a164",
+      "fromDate": "2024-02-02",
+      "toDate": "2024-03-05",
+      "reason": "Sick",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "48e5",
+      "userId": "46yui",
+      "fromDate": "2024-10-03",
+      "toDate": "2024-10-02",
+      "reason": "dfdfdfdf",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "b908",
+      "userId": "46yui",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "dfsdsffdf",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "e4ad",
+      "userId": "46yui",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "46yui",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "46yui",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "46yui",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "46yui",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Biology"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ba8d",
+      "userId": "5",
+      "fromDate": "2024-10-16",
+      "toDate": "2024-10-18",
+      "reason": "testing",
+      "status": "Pending",
+      "department": "Computer Science"
+    },
+    {
+      "id": "ac93",
+      "userId": "46yui",
+      "fromDate": "2025-02-06",
+      "toDate": "2025-02-07",
+      "reason": "asdfasdf",
+      "status": "Pending",
+      "department": "Biology"
+    }
+  ]
+}

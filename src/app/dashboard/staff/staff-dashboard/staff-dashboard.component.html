@@ -1,0 +1,148 @@
+
+<div class="wrapper">
+    <aside id="sidebar" class="js-sidebar">
+        <!-- Content For Sidebar -->
+        <div class="h-100">
+            <div class="sidebar-logo">
+                <!-- <a >CodzSword</a> -->
+            </div>
+            <ul class="sidebar-nav">
+                <!-- <li class="sidebar-header">
+                    Admin Elements
+                </li> -->
+                <li class="sidebar-item">
+                    <a  class="sidebar-link" routerLink="/staff-dashboard">
+                        <i class="fa-solid fa-list pe-2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <!-- <li class="sidebar-item">
+                    <a  class="sidebar-link" routerLink="/dashboard/staff-management">
+                        <i class="fa-solid fa-list pe-2"></i>
+                        Staff Management
+                    </a>
+                </li> -->
+                <li class="sidebar-item">
+                    <a class="sidebar-link" routerLink="staff-leave-management">  <!-- Corrected the router link -->
+                      <i class="fa-solid fa-list pe-2"></i>
+                      Leave management
+                    </a>
+                  </li>
+                  
+                <!-- <li class="sidebar-item">
+                    <a  class="sidebar-link" routerLink="/dashboard/staff-leave-management">
+                        <i class="fa-solid fa-list pe-2"></i>
+                        Leave management
+                    </a>
+                </li>
+                    -->
+            </ul>
+        </div>
+    </aside>
+    <div class="main">
+
+        <nav class="navbar navbar-expand px-3 border-bottom">
+            <button class="btn" id="sidebar-toggle" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a  data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                            <img src="https://i.ibb.co/thhvxxR/circular.png" class="avatar img-fluid rounded" alt="">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a  class="dropdown-item">Profile</a>
+                            <a  class="dropdown-item">Setting</a>
+                            <a  class="dropdown-item" (click)="onLogout()">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="content px-3 py-2" >
+            <div class="container-fluid">
+                <div class="mb-3">
+                    <h4>Staff Dashboard</h4>
+                </div>
+                <div class="row">
+                    <!-- total leaves applied -->
+                    <div class="col-12 col-md-3 d-flex text-center">
+                        <div class="card flex-fill border-0 illustration">
+                            <div class="card-body p-0 d-flex flex-fill">
+                                <div class="row g-0 w-100">
+                                    <div class="col-12">
+                                        <div class="p-3 m-1">
+                                            <p class="mb-0"></p>
+                                            <h4 class="text-primary">Total leaves applied</h4>
+                                            <h1 class="text-primary">{{totalLeaves}}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- total approved leaves -->
+                    <div class="col-12 col-md-3 d-flex text-center">
+                        <div class="card flex-fill border-0 bg-secondary">
+                            <div class="card-body py-4">
+                                <div class="d-flex align-items-start">
+                                    <div class="flex-grow-1">
+                                        <h4 class="mb-2 text-success">
+                                           Total Approved
+                                        </h4>
+                                        <h1 class="mb-2 text-success">
+                                            {{approvedLeaves}}
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- total leaves applied -->
+                    <div class="col-12 col-md-3 d-flex text-center">
+                        <div class="card flex-fill border-0 bg-danger">
+                            <div class="card-body py-4">
+                                <div class="d-flex align-items-start">
+                                    <div class="flex-grow-1">
+                                        <h4 class="mb-2 text-danger">
+                                           Total Rejected
+                                        </h4>
+                                        <h1 class="mb-2 text-danger">
+                                            {{ rejectedLeaves }}
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- total pending -->
+                    <div class="col-12 col-md-3 d-flex text-center">
+                        <div class="card flex-fill border-0 bg-light ">
+                            <div class="card-body py-4">
+                                <div class="d-flex align-items-start">
+                                    <div class="flex-grow-1">
+                                        <h4 class="mb-2 text-secondary">
+                                           Total pending
+                                        </h4>
+                                        <h1 class="mb-2 text-secondary">
+                                            {{ pendingLeaves }}
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<router-outlet></router-outlet>
+               
+            </div>
+        </main>
+        <a  class="theme-toggle">
+            <i class="fa-regular fa-moon"></i>
+            <i class="fa-regular fa-sun"></i>
+        </a>
+       
+    </div>
+</div>

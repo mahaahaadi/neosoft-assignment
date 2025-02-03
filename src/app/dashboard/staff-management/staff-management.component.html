@@ -1,0 +1,145 @@
+<!-- Table Element -->
+<div class="card border-0">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchTerm">
+      </div>
+      <div>
+        <button class="btn btn-success btn-sm"  (click)="openCreateStaffModal(createStaffModal)">
+          <i class="bi bi-plus-lg"></i> Add Staff
+        </button>
+      </div>
+    </div>
+    <div class="card-body" >
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Username</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of filteredUsers() | paginate: { itemsPerPage: 10, currentPage: page }; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ user.name }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.contactNumber }}</td>
+              <td>
+                <!-- View Button -->
+                <button class="btn btn-info btn-sm m-1" (click)="openViewModal(viewModal, user)">
+                  <i class="bi bi-eye"></i> View
+                </button>
+                <!-- Delete Button -->
+                <button class="btn btn-danger btn-sm m-1" (click)="openDeleteModal(deleteModal, user)">
+                  <i class="bi bi-trash"></i> Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+          <!-- Pagination Controls -->
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+      
+      </div>
+    </div>
+    <ng-template #noData>
+        no data
+    </ng-template>
+  </div>
+  
+  
+<!-- Create Staff Modal -->
+
+<ng-template #createStaffModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">Create New Staff</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="createStaffForm" (ngSubmit)="onSubmitCreateStaff()">
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input id="name" type="text" class="form-control" formControlName="name">
+        </div>
+        
+        <!-- Username -->
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input id="username" type="text" class="form-control" formControlName="username" >
+        </div>
+  
+         <!-- Password -->
+         <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="password" class="form-control" formControlName="password" >
+          </div>
+    
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" type="email" class="form-control" formControlName="email" >
+        </div>
+  
+        <!-- Contact Number -->
+        <div class="mb-3">
+          <label for="contactNumber" class="form-label">Contact Number</label>
+          <input id="contactNumber" maxlength="10" type="text" class="form-control" formControlName="contactNumber" >
+        </div>
+  
+        <!-- Department -->
+        <div class="mb-3">
+          <label for="department" class="form-label">Department</label>
+          <input id="department" type="disable" class="form-control"  formControlName="department" >
+        </div>
+  
+       
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancel</button>
+          <button type="submit" class="btn btn-primary" >Submit</button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+
+  <!-- View Modal -->
+  <ng-template #viewModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">View User</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Name:</strong> {{ selectedUser?.name }}</p>
+      <p><strong>Username:</strong> {{ selectedUser?.username }}</p>
+      <p><strong>Email:</strong> {{ selectedUser?.email }}</p>
+      <p><strong>Mobile:</strong> {{ selectedUser?.contactNumber }}</p>
+      <p><strong>Role:</strong> {{ selectedUser?.role }}</p>
+      <p><strong>Department:</strong> {{ selectedUser?.department }}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+    </div>
+  </ng-template>
+  
+  <!-- Delete Modal -->
+  <ng-template #deleteModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">Delete User</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to delete <strong>{{ selectedUser?.name }}</strong>?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancel</button>
+      <button type="button" class="btn btn-danger" (click)="deleteUser(); modal.close()">Delete</button>
+    </div>
+  </ng-template>
+  

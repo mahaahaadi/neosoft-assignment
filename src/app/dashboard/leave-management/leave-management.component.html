@@ -1,0 +1,89 @@
+<!-- Table Element -->
+<div class="card border-0">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchTerm">
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <!-- Check if there are leaves to display, else show 'no data' message -->
+      <table *ngIf="filteredLeaves().length > 0; else noData" class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">From Date</th>
+            <th scope="col">To Date</th>
+            <th scope="col">Reason</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leave of filteredLeaves() | paginate: { itemsPerPage: 10, currentPage: page }; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ leave.fromDate }}</td>
+            <td>{{ leave.toDate }}</td>
+            <td>{{ leave.reason }}</td>
+
+            <!-- Dropdown to change status directly in the table -->
+            <td>
+              <select class="form-control" [(ngModel)]="leave.status" [disabled]="leave.status !== 'Pending'"  (change)="saveLeaveStatusInTable(leave)">
+                <option *ngFor="let status of leaveStatusOptions" [value]="status">{{ status }}</option>
+              </select>
+            </td>
+
+            <td>
+             <!-- Save Button for table row -->
+             <!-- <button class="btn btn-primary btn-sm m-1" 
+             (click)="saveLeaveStatusInTable(leave)"
+             [disabled]="leave.status !== 'Pending'"> 
+       <i class="bi bi-save"></i> Save
+     </button> -->
+
+              <!-- View Button for modal -->
+              <button class="btn btn-info btn-sm m-1" (click)="openViewModal(viewModal, leave)">
+                <i class="bi bi-eye"></i> View
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Pagination Controls -->
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+
+      <!-- Template to show when no data is available -->
+      <ng-template #noData>
+        <div class="text-center">
+          <p class="text-muted">No leaves available for the selected department.</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<!-- View Modal for Leave Management -->
+<ng-template #viewModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">View Leave Details</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <p><strong>From Date:</strong> {{ selectedLeave?.fromDate }}</p>
+    <p><strong>To Date:</strong> {{ selectedLeave?.toDate }}</p>
+    <p><strong>Reason:</strong> {{ selectedLeave?.reason }}</p>
+
+    <!-- Dropdown for Status inside the modal -->
+    <div class="mb-3">
+      <label for="leaveStatus" class="form-label">Status</label>
+      <select class="form-control" id="leaveStatus" [(ngModel)]="selectedLeave.status" [disabled]="selectedLeave?.status !== 'Pending'" (change)="saveLeaveStatus()">
+        <option *ngFor="let status of leaveStatusOptions" [value]="status">{{ status }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+    <!-- <button type="button" class="btn btn-primary" (click)="saveLeaveStatus()"  [disabled]="selectedLeave?.status !== 'Pending'">Save</button> -->
+  </div>
+</ng-template>

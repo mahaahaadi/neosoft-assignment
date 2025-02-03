@@ -1,0 +1,120 @@
+<!-- Registration - Bootstrap Brain Component -->
+<section class="p-3 p-md-4 p-xl-5 d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-xxl-11">
+          <div class="card border-light-subtle shadow-sm">
+            <div class="row g-0">
+              <div class="col-12 col-md-6">
+                <!-- Placeholder for future profile image preview or default image -->
+                <img class="img-fluid rounded-start w-100 h-100 object-fit-cover side-img" loading="lazy" src="https://img.freepik.com/free-vector/loss-job-due-coronavirus-crisis_23-2148547719.jpg?t=st=1727779747~exp=1727783347~hmac=17b04e64413db95dadb0a29ab09ca4c46ee2773d0baeadc020f6c79fdbe70279&w=826" alt="Profile Image">
+              </div>
+              <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                
+                <div class="col-12 col-lg-11 col-xl-10">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-1">
+                        <div class="text-center mb-4">
+                          <a href="#!">
+                            <!-- <img src="" alt="BootstrapBrain Logo" width="175" height="57"> -->
+                          </a>
+                        </div>
+                        <h4 class="text-center">Register</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-3 p-md-4 p-xl-5">
+                    <form [formGroup]="registrationForm" (ngSubmit)="onRegister()">
+                      <!-- Name -->
+                      <div class="form-floating mb-1">
+                        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Your Name" required>
+                        <label for="name">Name</label>
+                        <div [style.visibility]="registrationForm.get('name')?.touched && registrationForm.get('name')?.errors ? 'visible' : 'hidden'" class="text-danger">
+                          <!-- Dynamic message based on the type of error -->
+                          <div [style.visibility]="registrationForm.get('name')?.touched && registrationForm.get('name')?.errors ? 'visible' : 'hidden'" class="text-danger">
+                            {{ registrationForm.get('name')?.errors?.['required'] ? 'Name is required.' : 'Name should have atleast 2 letters' }}
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Username -->
+                      <div class="form-floating mb-1">
+                        <input type="text" formControlName="username" class="form-control" id="username" placeholder="Username" required>
+                        <label for="username">Username</label>
+                        <div [style.visibility]="registrationForm.get('username')?.touched && registrationForm.get('username')?.errors ? 'visible' : 'hidden'" class="text-danger">
+                          {{ registrationForm.get('username')?.errors?.['required'] ? 'Username is required.' : 'Username should include atleast 5 letters.' }}
+                        </div>
+                      </div>
+                     
+                      <!-- Email field with single validation message -->
+                    <div class="form-floating mb-3">
+                      <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email" required>
+                      <label for="email">Email</label>
+                      <!-- Single div for displaying either 'required' or 'email format' error -->
+                      <div [style.visibility]="registrationForm.get('email')?.touched && registrationForm.get('email')?.errors ? 'visible' : 'hidden'" class="text-danger">
+                        {{ registrationForm.get('email')?.errors?.['required'] ? 'Email is required.' : 'Invalid email format.' }}
+                      </div>
+                    </div>
+
+                      <!-- Contact Number -->
+                      <div class="form-floating mb-1">
+                        <input type="tel" maxlength="10" formControlName="contactNumber" class="form-control" id="contactNumber" placeholder="Contact Number" (input)="onContactNumberInput($event)" required>
+                        <label for="contactNumber">Contact Number</label>
+                      
+                        <div [style.visibility]="registrationForm.get('contactNumber')?.touched && registrationForm.get('contactNumber')?.errors ? 'visible' : 'hidden'" class="text-danger">
+                          {{ registrationForm.get('contactNumber')?.errors?.['required'] ? 'Contact Number is required.' : 'Contact Number must be exactly 10 digits.' }}
+                        </div>
+                      </div>
+                      
+                      <!-- Department -->
+                      <div class="form-floating mb-1">
+                        <select formControlName="department" class="form-control" id="department" required>
+                          <option value="">Select Department</option>
+                          <option *ngFor="let department of departments" [value]="department.name">{{ department.name }}</option>
+                        </select>
+                        <label for="department">Department</label>
+                      </div>
+                      <div [style.visibility]="registrationForm.get('department')?.touched && registrationForm.get('department')?.errors?.['required'] ? 'visible' : 'hidden'" class="text-danger">
+                        Department is required.
+                      </div>
+                      
+                      
+                      <!-- Password -->
+                      <div class="form-floating mb-1">
+                        <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" required>
+                        <label for="password">Password</label>
+                        
+                        <div [style.visibility]="registrationForm.get('password')?.touched && registrationForm.get('password')?.errors ? 'visible' : 'hidden'" class="text-danger">
+                          {{ registrationForm.get('password')?.errors?.['required'] ? 'Password is required.' : 'Password must be at least 8 characters.' }}
+                        </div>
+                      </div>                      
+                      
+                      <!-- Profile Image Upload -->
+                      <div class="mb-3">
+                        <label for="profileImage" class="form-label">Profile Image</label>
+                        <input type="file" class="form-control" id="profileImage">
+                      </div>
+                      
+                      <!-- Submit Button -->
+                      <div class="d-grid">
+                        <button class="btn btn-dark btn-lg" type="submit" [disabled]="!registrationForm.valid">Register</button>
+                      </div>
+                      <!-- <div>
+                        <a routerLink="/register" class="link-primary text-decoration-none text-primary" routerLink="/login">Already have an account.</a>
+                       </div> -->
+                       <div style="text-align: center;" class="mt-3">
+                        <a routerLink="/login" class="link-primary text-decoration-none text-primary mt-5">Already have an account.</a>
+                      </div>
+                      
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
