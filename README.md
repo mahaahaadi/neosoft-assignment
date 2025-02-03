@@ -22,3 +22,7 @@ To run the application locally, follow these steps:
 1. Start the development server by running:
    ```bash
    ng serve
+   ```
+## 🛠 Setup Instructions
+1️⃣ Clone the Repository
+
